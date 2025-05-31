@@ -1,0 +1,13 @@
+[Unit]
+Description=Odoo 11
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=odoo
+ExecStart=/opt/odoo/venv/bin/python3 /opt/odoo/odoo-server/odoo-bin -c /etc/odoo.conf
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
